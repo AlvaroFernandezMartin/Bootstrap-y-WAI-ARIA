@@ -1,17 +1,5 @@
 # Mejora de accesibilidad con WAI-ARIA en elementos Bootstrap
 
-Este proyecto muestra cinco elementos comunes de Bootstrap mejorados con atributos WAI-ARIA para aumentar la accesibilidad. A continuación, se detallan los elementos seleccionados, las mejoras implementadas y cómo estas facilitan la navegación para usuarios con discapacidades.
-
-## Elementos seleccionados
-
-1. **Botón (Button)**
-2. **Modal**
-3. **Menú desplegable (Dropdown)**
-4. **Alerta (Alert)**
-5. **Pestañas (Tabs)**
-
----
-
 ## 1. Botón (Button)
 
 ### Original
@@ -125,18 +113,5 @@ Se agregó el atributo `aria-label="Enviar formulario"` para proporcionar un con
 
 ---
 
-## Requerimientos
 
-- **Bootstrap 5.3.0 o superior**: Para el estilo y funcionalidad.
-- Navegadores compatibles con WAI-ARIA y lectores de pantalla.
-
-## Cómo probar
-
-1. Abrir el archivo `index.html` en un navegador web.
-2. Interactuar con cada componente para comprobar los atributos mejorados.
-3. Usar un lector de pantalla (como NVDA o VoiceOver) para validar las mejoras de accesibilidad.
-
-## Conclusión
-
-Los atributos WAI-ARIA implementados aseguran que los elementos sean más accesibles para todos los usuarios, especialmente aquellos que dependen de tecnologías asistivas para navegar por la web.
 
