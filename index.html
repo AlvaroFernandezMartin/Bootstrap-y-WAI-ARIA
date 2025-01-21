@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap con WAI-ARIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1>Bootstrap con WAI-ARIA</h1>
+
+        <h2>1. Botón (Button)</h2>
+        <h3>Original</h3>
+        <button class="btn btn-primary">Botón</button>
+
+        <h3>Mejorado</h3>
+        <button class="btn btn-primary" aria-label="Enviar formulario">Botón</button>
+
+        <h2>2. Modal</h2>
+        <h3>Original</h3>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Título del modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Contenido del modal...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Mejorado</h3>
+        <div class="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Título del modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body" id="modalDescription">
+                        <p>Contenido del modal...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>3. Menú desplegable (Dropdown)</h2>
+        <h3>Original</h3>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Menú desplegable
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Opción 1</a></li>
+                <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                <li><a class="dropdown-item" href="#">Opción 3</a></li>
+            </ul>
+        </div>
+
+        <h3>Mejorado</h3>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="dropdownMenu">
+                Menú desplegable
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a class="dropdown-item" href="#">Opción 1</a></li>
+                <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                <li><a class="dropdown-item" href="#">Opción 3</a></li>
+            </ul>
+        </div>
+
+        <h2>4. Alerta (Alert)</h2>
+        <h3>Original</h3>
+        <div class="alert alert-warning" role="alert">
+            Este es un mensaje de alerta.
+        </div>
+
+        <h3>Mejorado</h3>
+        <div class="alert alert-warning" role="alert" aria-live="assertive" aria-atomic="true">
+            Este es un mensaje de alerta.
+        </div>
+
+        <h2>5. Pestañas (Tabs)</h2>
+        <h3>Original</h3>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Inicio</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Perfil</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Contenido de inicio.</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Contenido de perfil.</div>
+        </div>
+
+        <h3>Mejorado</h3>
+        <ul class="nav nav-tabs" id="myImprovedTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab-improved" data-bs-toggle="tab" data-bs-target="#home-improved" type="button" role="tab" aria-controls="home-improved" aria-selected="true" tabindex="0">Inicio</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab-improved" data-bs-toggle="tab" data-bs-target="#profile-improved" type="button" role="tab" aria-controls="profile-improved" aria-selected="false" tabindex="-1">Perfil</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myImprovedTabContent">
+            <div class="tab-pane fade show active" id="home-improved" role="tabpanel" aria-labelledby="home-tab-improved">Contenido de inicio.</div>
+            <div class="tab-pane fade" id="profile-improved" role="tabpanel" aria-labelledby="profile-tab-improved">Contenido de perfil.</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
